@@ -1,0 +1,188 @@
+{
+	"info": {
+		"_postman_id": "6875002f-e6be-4d7f-a9eb-8d8e4f9e1016",
+		"name": "RicettarioWeb",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11748742"
+	},
+	"item": [
+		{
+			"name": "AUTH",
+			"item": [
+				{
+					"name": "Registrazione Utente",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLaXdpU1UiLCJpZCI6MCwicm9sZXMiOiJST0xFX0FETUlOX1JJQ0VUVEFSSU8sUk9MRV9VU0VSX1JJQ0VUVEFSSU8iLCJuYW1lIjoia2l3aXN1Iiwic3VybmFtZSI6Imtpd2lzdSIsImVtYWlsIjoibWF0dGVvYmVybjkyQGdtYWlsLmNvbSIsImlhdCI6MTY1NjQ0MTUzNSwiZXhwIjoxNjU2NDcwMzM1fQ.9-IXBfvon6KnuWTT5Wexo8Ta8KkFHLaV072p_qQ1La8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin\",\r\n    \"name\": \"admin\",\r\n    \"surname\": \"admin\",\r\n    \"email\": \"adminricettario@gmail.com\",\r\n    \"roles\": [\r\n        {\r\n            \"id\": 0,\r\n            \"roleType\": \"ADMIN_RICETTARIO\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"register"
+							]
+						},
+						"description": "Endpoint per registrare un nuovo utente"
+					},
+					"response": []
+				},
+				{
+					"name": "Autenticazione Utente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"KiwiSU\",\r\n    \"password\": \"Kiwibit2021\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/authenticate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"authenticate"
+							]
+						},
+						"description": "Endpoint per l'autenticazione di un utente. Restituisce il token generato."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GET All Receipes",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLaXdpU1UiLCJpZCI6MCwicm9sZXMiOiJST0xFX0FETUlOX1JJQ0VUVEFSSU8sUk9MRV9VU0VSX1JJQ0VUVEFSSU8iLCJuYW1lIjoia2l3aXN1Iiwic3VybmFtZSI6Imtpd2lzdSIsImVtYWlsIjoibWF0dGVvYmVybjkyQGdtYWlsLmNvbSIsImlhdCI6MTY0Nzc5Nzc1NiwiZXhwIjoxNjQ3ODI2NTU2fQ.mdHigyaTKW6aJgXeZElBqjRdcRdPI-wzLooxrQpwrMU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/api/v1/receipes",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"receipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADD Receipe",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLaXdpU1UiLCJpZCI6MCwicm9sZXMiOiJST0xFX0FETUlOX1JJQ0VUVEFSSU8sUk9MRV9VU0VSX1JJQ0VUVEFSSU8iLCJuYW1lIjoia2l3aXN1Iiwic3VybmFtZSI6Imtpd2lzdSIsImVtYWlsIjoibWF0dGVvYmVybjkyQGdtYWlsLmNvbSIsImlhdCI6MTY0Nzc5Nzc1NiwiZXhwIjoxNjQ3ODI2NTU2fQ.mdHigyaTKW6aJgXeZElBqjRdcRdPI-wzLooxrQpwrMU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\n\t\"title\": \"PASTA DI MATTEO\",\n\t\"description\": \"Questa è la pasta di Matteo\",\n\t\"preparation\": \"Cuocere la pasta e cazzi tuoi\",\n\t\"dateCreation\": null,\n\t\"dateUpdated\": null,\n\t\"timePreparation\": null,\n\t\"timeCooking\": null,\n\t\"timeRest\": null,\n\t\"link\": null,\n\t\"advise\": null,\n\t\"calories\": null,\n\t\"notes\": null,\n\t\"isArchivied\": null,\n\t\"category\": null,\n\t\"difficult\": null,\n\t\"cost\": null,\n\t\"userCreated\": null,\n\t\"hashtags\": null,\n\t\"receipeIngredients\": null,\n\t\"receipeFavoritesUsers\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/v1/receipes",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"receipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Receipe",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJLaXdpU1UiLCJpZCI6MCwicm9sZXMiOiJST0xFX0FETUlOX1JJQ0VUVEFSSU8sUk9MRV9VU0VSX1JJQ0VUVEFSSU8iLCJuYW1lIjoia2l3aXN1Iiwic3VybmFtZSI6Imtpd2lzdSIsImVtYWlsIjoibWF0dGVvYmVybjkyQGdtYWlsLmNvbSIsImlhdCI6MTY1NTMyMDE4MSwiZXhwIjoxNjU1MzQ4OTgxfQ.XTWT0t-igaquAj89v1hnBWhlZUSFYKzXFd2sO3j3-l4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/api/v1/receipes/0",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"receipes",
+						"0"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:8080/"
+		}
+	]
+}

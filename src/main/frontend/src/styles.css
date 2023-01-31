@@ -1,0 +1,36 @@
+html, body { height: 100%; background-color: #EAE2B7; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@font-face {
+    font-family: "Quarto";
+    src: local("Quarto"), url(./assets/fonts/Quarto_Regular.ttf) format("truetype");
+}
+
+.container{
+    font-family: "Quarto", Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+mat-dialog-container {
+    background-color: #EAE2B7 !important;
+}
+
+.container_img {
+    margin: 0 auto;
+    max-width:1000px;
+}
+
+img.right {
+    display:block;
+    float:right;
+}
+
+@media (max-width: 570px) {
+    img.right {
+        display:block;
+        float:none;
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,16 @@
+h2 {
+    font-family: 'Quarto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 51px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
