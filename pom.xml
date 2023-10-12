@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.ricettario</groupId>
 	<artifactId>Ricettario</artifactId>
-	<version>0.0.1</version>
+	<version>1.0.0</version>
 	<name>Ricettario</name>
 	<description>Ricettario Web</description>
 	<properties>
