@@ -50,3 +50,8 @@ npm run test:unit
 ```sh
 npm run lint
 ```
+
+## Prima commands
+```sh
+npx prisma
+```
