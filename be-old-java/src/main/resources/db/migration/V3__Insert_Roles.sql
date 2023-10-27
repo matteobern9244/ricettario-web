@@ -1,2 +1,0 @@
-INSERT INTO role(id, role_type)VALUES (0, 'ADMIN_RICETTARIO');
-INSERT INTO role(id, role_type)VALUES (1, 'USER_RICETTARIO');
